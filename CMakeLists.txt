@@ -28,6 +28,10 @@ if (${CMAKE_VERSION} VERSION_GREATER "3.0.1")
 	cmake_policy(SET CMP0048 NEW)
 endif()
 
+if(APPLE)
+    set(CMAKE_OSX_DEPLOYMENT_TARGET "10.15" CACHE STRING "Minimum OS X deployment version" FORCE)
+endif()
+
 project(SPIRV-Cross LANGUAGES CXX C)
 enable_testing()
 
